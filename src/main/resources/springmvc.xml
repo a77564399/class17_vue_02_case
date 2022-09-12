@@ -9,9 +9,9 @@ http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
-    <!-- 配置创建 spring 容器要扫描的包 -->
-    <context:component-scan base-package="com.itheima">
-        <!-- 制定扫包规则 ,只扫描使用@Controller 注解的 JAVA 类 -->
+    <!-- 配置创建 spring 容器要扫描的包,值扫描web下的Controller -->
+    <context:component-scan base-package="com.class17" use-default-filters="false">
+        <!-- 制定扫包规则 ,只扫描使用@Controller 注解的 JAVA 类,但是此注解不仅会扫描Controller其他的也会扫描，因此需要将use-default-filters改为false -->
         <context:include-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
